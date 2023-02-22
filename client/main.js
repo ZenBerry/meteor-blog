@@ -4,7 +4,7 @@ import { Mongo } from 'meteor/mongo';
 student = new Mongo.Collection('student');
 
 Template.Insert.events({
-    'click .insertusr': function (event) { // Function which gets Activated on Click of Insert
+    'click .post-button': function (event) { // Function which gets Activated on Click of Insert
 
         // Taking the Value in Registers
         var d_name = $('#Name').val();

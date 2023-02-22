@@ -12,7 +12,19 @@ body {
   min-height: 100vh;
 }
 
+table {
+  padding: 0px 20px 0px 20px;
+}
+
 a {
+  color: white;
+}
+
+.hover-button {
+  color: transparent;
+  transition: color 0.1s ease-in-out;
+}
+.hover-button:hover {
   color: white;
 }
 
@@ -20,10 +32,10 @@ textarea {
   color: white;
   background-color: transparent;
   font-family: "Vulf mono";
-  border: 0px;
   resize: none;
-  width: 100vw;
+  width: 80vw;
   overflow-y: hidden;
+  height: 1.5em;
 }
 textarea:focus {
   outline: none;
@@ -64,8 +76,8 @@ main:last-of-type {
 
 footer {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: fixed;
   height: 50px;
   background-color: #F09642;
@@ -73,6 +85,9 @@ footer {
   left: 0;
   bottom: 0;
   padding: 0px 20px 0px 20px;
+}
+footer text, footer post-button {
+  display: inline-block;
 }
 footer p {
   color: #E8D6BE;
