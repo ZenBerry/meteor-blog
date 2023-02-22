@@ -6,13 +6,13 @@
 </head>
 <body>
   <header>
-    <a onclick="Meteor.loginWithGoogle()">Switch a person</a>
+    <a id="switch-person-link" onclick="Meteor.loginWithGoogle()">Switch a person</a>
   </header>
   <div class='container'>
     <br>
     <div class='row'>
       {{#if currentUser}}
-        <h3 align='center'>{{currentUser.id}} posts</h3>
+        <h3 align='center'>{{currentUser.profile.name}} posts</h3>
       {{/if}}
       <div>
         <table align='left'>

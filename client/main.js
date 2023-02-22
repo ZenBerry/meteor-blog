@@ -2,11 +2,9 @@ import './main.html';
 import { Mongo } from 'meteor/mongo';
 posts = new Mongo.Collection('posts');
 
-Template.header.events({
-  'click a': function () {
-    console.log(Meteor.user());
-  }
-});
+// Tracker.autorun(function() {
+//   console.log(Meteor.user());
+// });
 
 Template.Insert.events({
   'click .post-button': function(event) { // Function which gets Activated on Click of Insert
@@ -14,7 +12,8 @@ Template.Insert.events({
     var d_post = $('#input').val();
     // Mongo Query to Insert into Collection posts
     posts.insert({
-      post: d_post
+      post: d_post,
+      userId: Meteor.userId(),
     });
     // Clear the Input After Inserting
     document.getElementById('input').value = "";
@@ -22,7 +21,8 @@ Template.Insert.events({
 });
 Template.body.helpers({ // Function that Displays all the Records
   'resolutions': function() {
-    return posts.find().fetch();
+    console.log(Meteor.userId());
+    return posts.find({userId: Meteor.userId()});
   }
 });
 Template.resolution.events({
