@@ -1,0 +1,48 @@
+@font-face 
+  font-family: "Vulf Mono Light" 
+  src: url("//db.onlinewebfonts.com/t/9c6c1c8fddc2345da82d93c96966d1e3.eot") 
+  src: url("//db.onlinewebfonts.com/t/9c6c1c8fddc2345da82d93c96966d1e3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9c6c1c8fddc2345da82d93c96966d1e3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9c6c1c8fddc2345da82d93c96966d1e3.woff") format("woff"), url("//db.onlinewebfonts.com/t/9c6c1c8fddc2345da82d93c96966d1e3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9c6c1c8fddc2345da82d93c96966d1e3.svg#Vulf Mono Light") format("svg") 
+body 
+  margin: 0 
+  font-family: "Vulf mono" 
+  background-color: #E8D6BE 
+  display: grid 
+  min-height: 100vh 
+  grid-template-rows: auto 1fr auto 
+header 
+  background-color: #F09642 
+  display: flex 
+  align-items: center 
+  justify-content: flex-end 
+  height: 50px 
+  nav 
+    ul 
+      li 
+        display: inline-block 
+        padding-right: 10px 
+        a 
+          color: #E8D6BE 
+main 
+  height: 100vh 
+  display: block 
+  text-align: center 
+  h1 
+    color: #F09642 
+  p 
+    font-size: 1.2em 
+    text-align: justify 
+    width: 50vw 
+    margin: 0 auto 
+    &:after 
+      content: " " 
+      visibility: hidden 
+      display: inline-block 
+      width: 100% 
+  &:last-of-type 
+    height: calc(100vh - 50px) 
+footer 
+  height: 50px 
+  background-color: #F09642 
+  p 
+    color: #E8D6BE 
+    text-align: center 

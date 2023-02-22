@@ -1,58 +1,41 @@
 <head>
-	<title>Meteor Application</title>
-
+  <title>Meteor Application</title>
 </head>
 
 <body>
-
-	<div class="container">
-		<h3 align="center">Meteor Form Application</h3>
-		<br>
-		<div class="row">
-			<div class="col-md-6">
-
-					<div class="form-group">
-						<label for="Address">Address</label>
-						<textarea class="form-control" id="Address" name="address" rows="3"></textarea>
-					</div>
-					{{> Insert}}
-					<br><br><br>
-					<h6 id= "Message"></h6>
-			</div>
-			<div class="col-md-6">
-	
-
-				<table class="table">
-					<thead class="thead-light">
-					  <tr>
-	
-						<th>Address</th>
-
-					  </tr>
-					  {{#each resolutions }}
-					  <tr>
-							{{> resolution}}
-					  </tr>
-					  {{/each}}
-					</thead>
-				</table>
-				<ul>
-				
-				</ul>
-
-			</div>
-		</div>
-	</div>
-
-
+  <header>
+    <a href=''>Hello</a>
+  </header>  
+  <div class="container">
+    <h3 align="center">Meteor Form Application</h3>
+    <br>
+    <div class="row">
+      <div>
+        <div class="">
+          <label for="Address">Address</label>
+          <textarea class="form-control" id="Address" name="address" rows="3"></textarea>
+        </div> 
+        {{> Insert}} <br><br><br>
+        <h6 id="Message"></h6>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Address</th>
+            </tr> {{#each resolutions }} <tr> {{> resolution}} </tr> {{/each}}
+          </thead>
+        </table>
+        <ul>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
-
 <template name="resolution">
-	<td>{{address}}</td>
-	<td><button class="">Delete</button></td>
+  <td>{{address}}</td>
+  <td><button class="">Delete</button></td>
 </template>
-
-<template name = "Insert">
-	<button class="btn btn-primary insertusr">Insert</button>
+<template name="Insert">
+  <button class="btn btn-primary insertusr">Insert</button>
 </template>
-
