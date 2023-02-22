@@ -4,7 +4,7 @@
 
 <body>
   <header>
-    <a>Switch a person</a>
+    <a onclick="Meteor.loginWithGoogle()">Switch a person</a>
   </header>
   <div class='container'>
     <br>
@@ -23,14 +23,11 @@
     </div>
   </div>
   <footer>
-      {{> Insert}} 
+    {{> Insert}} 
   </footer>
 </body>
 <template name='resolution' class='resolution'>
   <td>{{address}}&nbsp;<a class='hover-button'>Delete</a></td> 
- 
- 
-  
 </template>
 <template name='Insert'>
   <textarea class='text' id='Address' name='address' rows='1'></textarea>
