@@ -38,9 +38,16 @@ Template.body.helpers({
 Template.resolution.events({
   'click .delete-post-button': function() {
     posts.remove(this._id);
+  },
+
+  'click .edit-post-button':function(event)
+  {
+    let doc = posts.findOne({_id: this._id});
+    console.log("DOC POST",doc.post)
+    document.getElementById('input').value = doc.post
   }
+
 });
 
 // @._id selects the item associated to the button in the UI
 
-//# sourceMappingURL=main.js.map

@@ -1,6 +1,6 @@
 node_modules/
 *.DS_Store
-.temp
-.map
+*.temp
+*.map
 Gruntfile.js
-.coffee
+*.coffee
