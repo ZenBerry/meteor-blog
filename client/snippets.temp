@@ -1,0 +1,22 @@
+// Define a new collection with a userId property
+const MyCollection = new Mongo.Collection('myCollection');
+MyCollection.allow({
+  insert: function (userId, doc) {
+    // Only allow inserts for the current user
+    return userId && doc.userId === userId;
+  },
+  update: function (userId, doc, fields, modifier) {
+    // Only allow updates for the current user
+    return userId && doc.userId === userId;
+  },
+  remove: function (userId, doc) {
+    // Only allow removes for the current user
+    return userId && doc.userId === userId;
+  },
+  fetch: ['userId']
+});
+
+// Insert a new document with the current user ID
+MyCollection.insert({ userId: Meteor.userId(), data: 'example data' });
+
+***

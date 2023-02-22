@@ -1,6 +1,13 @@
 import './main.html';
 import { Mongo } from 'meteor/mongo';
 posts = new Mongo.Collection('posts');
+
+Template.header.events({
+  'click a': function () {
+    console.log(Meteor.user());
+  }
+});
+
 Template.Insert.events({
   'click .post-button': function(event) { // Function which gets Activated on Click of Insert
     // Taking the Value in Registers
