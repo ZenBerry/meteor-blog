@@ -29,13 +29,18 @@ a {
 }
 
 textarea {
-  color: white;
   background-color: transparent;
+  border-color: white;
+  border-radius: 10px;
+  color: white;
   font-family: "Vulf mono";
-  resize: none;
-  width: 80vw;
-  overflow-y: hidden;
   height: 1.5em;
+  margin-left: 30px;
+  margin-right: 30px;
+  overflow-y: hidden;
+  padding: 10px;
+  resize: none;
+  width: 60vw;
 }
 textarea:focus {
   outline: none;
@@ -79,15 +84,15 @@ footer {
   justify-content: center;
   align-items: center;
   position: fixed;
-  height: 50px;
+  height: 70px;
   background-color: #F09642;
   width: 100vw;
   left: 0;
   bottom: 0;
   padding: 0px 20px 0px 20px;
 }
-footer text, footer post-button {
-  display: inline-block;
+footer post-button {
+  left: 300px;
 }
 footer p {
   color: #E8D6BE;
