@@ -8,6 +8,11 @@ Meteor.startup(() => {
 
   posts.allow({
 
+    insert: function (userId) {
+      // Only allow inserts for the current user
+      return userId === userId;
+    },
+
     update: function (userId, doc, fields, modifier) {
       // Only allow updates for the current user
       return userId === userId;
@@ -29,7 +34,7 @@ Meteor.startup(() => {
   });
 
 
-  Accounts.onCreateUser(function (user) {
+  Accounts.validateNewUser(function (user) {
     console.log('new user created');
 
     // Generate a unique nickname based on the user's profile name
@@ -38,9 +43,9 @@ Meteor.startup(() => {
     // Add the nickname to the user's profile
     user.profile.nickname = nickname;
 
-    user.userId = Meteor.userId()
+    // user.userId = Meteor.userId()
 
-    return user;
+    return true;
   });
 
   function generateUniqueNickname(name) {
