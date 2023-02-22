@@ -7,8 +7,8 @@ Meteor.startup(() => {
     service: "google"
   }, {
     $set: {
-      clientId: "<your client ID>",
-      secret: "<your client secret>"
+      clientId: "423385515973-37c6a8lb4e8qukqbq67d943kg2r9a91p.apps.googleusercontent.com",
+      secret: "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"
     }
   });
 });
