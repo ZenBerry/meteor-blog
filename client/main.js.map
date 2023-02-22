@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "main.js",
+  "sourceRoot": "",
+  "sources": [
+    "main.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,IAAA;;AAAA,OAAA;;AACA,OAAA;EAAS,KAAT;CAAA,MAAA;;AACA,KAAA,GAAQ,IAAI,KAAK,CAAC,UAAV,CAAqB,OAArB;;AAER,QAAQ,CAAC,MAAM,CAAC,MAAhB,CAAuB;EAAA,oBAAA,EAAsB,QAAA,CAAC,KAAD,CAAA;AAE7C,QAAA,MAAA;;;IACE,MAAA,GAAS,CAAA,CAAE,QAAF,CAAW,CAAC,GAAZ,CAAA,EADX;;;IAIE,KAAK,CAAC,MAAN,CACE;MAAA,IAAA,EAAM,MAAN;MACA,MAAA,EAAQ,MAAM,CAAC,MAAP,CAAA;IADR,CADF,EAJF;;;IASE,QAAQ,CAAC,cAAT,CAAwB,OAAxB,CAAgC,CAAC,KAAjC,GAAyC;EAXE;AAAtB,CAAvB;;AAcA,QAAQ,CAAC,IAAI,CAAC,OAAd,CAAsB;EAAA,aAAA,EAAe,QAAA,CAAA,CAAA;IACnC,OAAO,CAAC,GAAR,CAAY,MAAM,CAAC,MAAP,CAAA,CAAZ;WACA,KAAK,CAAC,IAAN,CAAW;MAAA,MAAA,EAAQ,MAAM,CAAC,MAAP,CAAA;IAAR,CAAX;EAFmC;AAAf,CAAtB;;AAIA,QAAQ,CAAC,UAAU,CAAC,MAApB,CAA2B;EAAA,2BAAA,EAA6B,QAAA,CAAA,CAAA;IACtD,KAAK,CAAC,MAAN,CAAa,IAAC,CAAA,GAAd;EADsD;AAA7B,CAA3B;;AAtBA",
+  "sourcesContent": [
+    "import './main.html';\nimport { Mongo } from 'meteor/mongo';\nposts = new Mongo.Collection('posts');\n\nTemplate.Insert.events 'click .post-button': (event) ->\n  \n  #Taking the Value in Registers\n  d_post = $('#input').val()\n  \n  #Mongo Query to Insert into Collection posts\n  posts.insert\n    post: d_post\n    userId: Meteor.userId()\n    \n  #Clear the Input After Inserting\n  document.getElementById('input').value = ''\n  return\n\nTemplate.body.helpers 'resolutions': ->\n  console.log Meteor.userId()\n  posts.find userId: Meteor.userId()\n\nTemplate.resolution.events 'click .delete-post-button': ->\n  posts.remove @_id\n  # @._id selects the item associated to the button in the UI\n  return"
+  ]
+}
