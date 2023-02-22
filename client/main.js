@@ -21,8 +21,10 @@ Template.Insert.events({
       Session.set('editingPostId', null);
     } else {
       // if we're not editing an existing post, insert a new document into the posts collection
+      console.log('Inserting meteor user', Meteor.user())
       posts.insert({
         post: d_post,
+        nickname: Meteor.user().profile.nickname,
         userId: Meteor.userId()
       });
     }
@@ -34,6 +36,14 @@ Template.Insert.events({
 Template.body.helpers({
   'resolutions': function() {
     console.log(Meteor.userId());
+
+    if (Template.instance().subscriptionsReady()) {
+      console.log('haha3',Router.current().params.nickname)
+      return posts.find({
+        nickname: Router.current().params.nickname
+      });
+    }
+
     return posts.find({
       userId: Meteor.userId()
     });

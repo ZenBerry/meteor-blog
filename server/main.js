@@ -42,6 +42,7 @@ Meteor.startup(() => {
     
     // Add the nickname to the user's profile
     user.profile.nickname = nickname;
+    Meteor.users.update(Meteor.userId(), {$set: {nickname: nickname}});
 
     // user.userId = Meteor.userId()
 
