@@ -9,7 +9,9 @@
   <div class='container'>
     <br>
     <div class='row'>
-      <h3 align="center">Posts</h3>
+      {{#if currentUser}}
+        <h3 align='center'>{{currentUser.profile.name}} posts</h3>
+      {{/if}}
       <div>
         <table align='left'>
           <thead>
