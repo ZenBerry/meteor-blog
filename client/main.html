@@ -1,9 +1,6 @@
 <head>
 	<title>Meteor Application</title>
 
-	<!--Bootstrap CSS Files-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
@@ -13,41 +10,24 @@
 		<br>
 		<div class="row">
 			<div class="col-md-6">
-					<div class="form-group">
-						<label for="Name">Name</label>
-						<input type="text" id="Name" class="form-control" name="name">
-					</div>
-
-					<div class="form-group">
-						<label for="Email">Email address</label>
-						<input type="email" id="Email" class="form-control" name="email">
-					</div>
-
-					<div class="form-group">
-						<label for="Password">Password</label>
-						<input type="password" id="Password" class="form-control" name="password">
-					</div>
 
 					<div class="form-group">
 						<label for="Address">Address</label>
 						<textarea class="form-control" id="Address" name="address" rows="3"></textarea>
 					</div>
 					{{> Insert}}
-					{{> Update}}
 					<br><br><br>
 					<h6 id= "Message"></h6>
 			</div>
 			<div class="col-md-6">
-				<h3 algin="center">Student Record</h3>
+	
 
 				<table class="table">
 					<thead class="thead-light">
 					  <tr>
-						<th scope="col">Name</th>
-						<th scope="col">Email</th>
-						<th scope="col">Password</th>
-						<th scope="col">Address</th>
-						<th scope="col">Delete</th>
+	
+						<th>Address</th>
+
 					  </tr>
 					  {{#each resolutions }}
 					  <tr>
@@ -68,17 +48,11 @@
 </body>
 
 <template name="resolution">
-	<td>{{name}}</td>
-	<td>{{email}}</td>
-	<td>{{password}}</td>
 	<td>{{address}}</td>
-	<td><button class="btn btn-danger">Delete</button></td>
+	<td><button class="">Delete</button></td>
 </template>
 
 <template name = "Insert">
 	<button class="btn btn-primary insertusr">Insert</button>
 </template>
 
-<template name = "Update">
-	<button class="btn btn-warning updateusr">Update</button>
-</template>
