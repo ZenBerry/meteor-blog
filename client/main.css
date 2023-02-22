@@ -16,6 +16,19 @@ a {
   color: white;
 }
 
+textarea {
+  color: white;
+  background-color: transparent;
+  font-family: "Vulf mono";
+  border: 0px;
+  resize: none;
+  width: 100vw;
+  overflow-y: hidden;
+}
+textarea:focus {
+  outline: none;
+}
+
 header {
   align-items: center;
   background-color: #F09642;
@@ -50,12 +63,16 @@ main:last-of-type {
 }
 
 footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   height: 50px;
   background-color: #F09642;
   width: 100vw;
   left: 0;
   bottom: 0;
+  padding: 0px 20px 0px 20px;
 }
 footer p {
   color: #E8D6BE;

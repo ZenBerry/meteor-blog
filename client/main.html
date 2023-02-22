@@ -4,18 +4,12 @@
 
 <body>
   <header>
-    <a href='#'>Switch user</a>
+    <a href='#'>Switch a person</a>
   </header>
   <div class="container">
     <h3 align="center">Meteor Form Application</h3>
     <br>
     <div class="row">
-      <div>
-        <div class="">
-          <label for="Address">Address</label>
-          <textarea class="form-control" id="Address" name="address" rows="3"></textarea>
-        </div> {{> Insert}} <br><br><br>
-      </div>
       <div>
         <table>
           <thead>
@@ -27,12 +21,17 @@
       </div>
     </div>
   </div>
-  <footer> Edit </footer>
+  <footer>
+    <div>
+      <textarea class="form-control" id="Address" name="address" rows="1"></textarea>
+      <!-- {{> Insert}}  -->
+    </div>
+  </footer>
 </body>
 <template name="resolution">
   <td>{{address}}</td>
   <td><button class="">Delete</button></td>
 </template>
 <template name="Insert">
-  <button class="btn btn-primary insertusr">Insert</button>
+  <button class="insertusr">Insert</button>
 </template>
