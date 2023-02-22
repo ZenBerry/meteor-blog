@@ -19,8 +19,6 @@ a
 .hover-button
   color: transparent
   transition: color 0.1s ease-in-out
-  &:hover
-    color: white
 textarea
   background-color: transparent  
   border-color: white
@@ -43,27 +41,11 @@ header
   height: 50px 
   justify-content: flex-end 
   padding: 0px 20px 0px 20px
-main 
-  display: block 
-  height: 100vh 
-  text-align: center 
-  h1 
-    color: #F09642 
-  p 
-    font-size: 1.2em 
-    text-align: justify 
-    width: 50vw 
-    margin: 0 auto 
-    &:after 
-      content: ' ' 
-      visibility: hidden 
-      display: inline-block 
-      width: 100% 
-  &:last-of-type 
-    height: calc(100vh - 50px) 
+.posts
+  &:hover a
+    color: white
 footer 
   display: flex
-
   justify-content: center
   align-items: center
   position: fixed
