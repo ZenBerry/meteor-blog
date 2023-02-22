@@ -1,7 +1,9 @@
 <head>
   <title>Quiet blog</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
 </head>
-
 <body>
   <header>
     <a onclick="Meteor.loginWithGoogle()">Switch a person</a>
@@ -29,9 +31,9 @@
   </footer>
 </body>
 <template name='resolution' class='resolution'>
-  <td>{{address}}&nbsp;<a class='hover-button'>Delete</a></td> 
+  <td>{{post}}&nbsp;<a class='hover-button delete-post-button'>Delete</a></td> 
 </template>
 <template name='Insert'>
-  <textarea class='text' id='Address' name='address' rows='1'></textarea>
+  <textarea class='text' id='input' name='input' rows='1'></textarea>
   <a class='post-button'>Post</a>
 </template>

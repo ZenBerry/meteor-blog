@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { ServiceConfiguration } from 'meteor/service-configuration';
 
 Meteor.startup(() => {
-  student = new Mongo.Collection('student');
+  posts = new Mongo.Collection('posts');
   ServiceConfiguration.configurations.upsert({
     service: "google"
   }, {
