@@ -40,7 +40,6 @@ Template.body.helpers({
   'resolutions': function() {
     console.log(Meteor.userId());
     if (Template.instance().subscriptionsReady()) {
-      console.log('haha3', Router.current().params.nickname)
       return posts.find({
         nickname: Router.current().params.nickname
       });
@@ -59,6 +58,8 @@ Template.resolution.events({
     const myCurrentNick = Meteor.user().profile.nickname //todo: avoid defining these twice
     if (routerNick === myCurrentNick) {
       posts.remove(this._id);
+    } else {
+      console.log('Not your blog mate!')
     }
   },
   'click .edit-post-button': function(event) {
