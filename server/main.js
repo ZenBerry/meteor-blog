@@ -33,6 +33,12 @@ Meteor.startup(() => {
     }
   });
 
+  Accounts.onLogin(function (info) {
+   const nickname = info.user.profile.nickname
+   console.log({nickname})
+   Meteor.users.update(Meteor.userId(), {$set: {nickname: nickname}});
+  })
+
 
   Accounts.validateNewUser(function (user) {
     console.log('new user created');
