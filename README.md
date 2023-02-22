@@ -1,6 +1,8 @@
+
 Nothing fancy, just a tiny app that interacts with MongoDB <br>
 Meteor + Blaze + SASS <br>
-Working on Google Auth now <br>
+Working on Google Auth <br>
+Upd: Basic auth now works, posts are created and read accordingly <br>
 
 Demo: https://blog.eu.meteorapp.com/
 
