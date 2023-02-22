@@ -50,8 +50,12 @@ main:last-of-type {
 }
 
 footer {
+  position: fixed;
   height: 50px;
   background-color: #F09642;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
 }
 footer p {
   color: #E8D6BE;

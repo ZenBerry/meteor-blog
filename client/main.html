@@ -1,12 +1,11 @@
 <head>
-  <title>Are you ok?</title>
-
+  <title>Quiet blog</title>
 </head>
 
 <body>
   <header>
-    <a href='#'>Hello</a>
-  </header>  
+    <a href='#'>Switch user</a>
+  </header>
   <div class="container">
     <h3 align="center">Meteor Form Application</h3>
     <br>
@@ -15,23 +14,20 @@
         <div class="">
           <label for="Address">Address</label>
           <textarea class="form-control" id="Address" name="address" rows="3"></textarea>
-        </div> 
-        {{> Insert}} <br><br><br>
-        <h6 id="Message"></h6>
+        </div> {{> Insert}} <br><br><br>
       </div>
       <div>
         <table>
           <thead>
             <tr>
-              <th>Address</th>
+              <th>Posts</th>
             </tr> {{#each resolutions }} <tr> {{> resolution}} </tr> {{/each}}
           </thead>
         </table>
-        <ul>
-        </ul>
       </div>
     </div>
   </div>
+  <footer> Edit </footer>
 </body>
 <template name="resolution">
   <td>{{address}}</td>
