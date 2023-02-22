@@ -1,8 +1,6 @@
 import './main.html';
-
-import {
-  Mongo
-} from 'meteor/mongo';
+import {Mongo} from 'meteor/mongo';
+import './routes.js';
 
 posts = new Mongo.Collection('posts');
 

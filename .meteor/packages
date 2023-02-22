@@ -25,3 +25,4 @@ accounts-base
 accounts-ui
 accounts-google
 session
+iron:router

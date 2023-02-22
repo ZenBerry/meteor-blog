@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { ServiceConfiguration } from 'meteor/service-configuration';
 import { Accounts } from 'meteor/accounts-base';
 
+
 Meteor.startup(() => {
   posts = new Mongo.Collection('posts');
 
