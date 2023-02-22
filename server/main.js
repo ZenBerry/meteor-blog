@@ -38,6 +38,8 @@ Meteor.startup(() => {
     // Add the nickname to the user's profile
     user.profile.nickname = nickname;
 
+    user.userId = Meteor.userId()
+
     return user;
   });
 
