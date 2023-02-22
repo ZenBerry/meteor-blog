@@ -1,14 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 import { ServiceConfiguration } from 'meteor/service-configuration';
+import { Accounts } from 'meteor/accounts-base';
 
 Meteor.startup(() => {
   posts = new Mongo.Collection('posts');
 
   posts.allow({
-    insert: function (userId) {
-      // Only allow inserts for the current user
-      return userId === userId;
-    },
+
     update: function (userId, doc, fields, modifier) {
       // Only allow updates for the current user
       return userId === userId;
@@ -28,4 +26,42 @@ Meteor.startup(() => {
       secret: "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"
     }
   });
+
+
+  Accounts.onCreateUser(function (user) {
+    console.log('new user created');
+
+    // Generate a unique nickname based on the user's profile name
+    const nickname = generateUniqueNickname(user.profile.name);
+    
+    // Add the nickname to the user's profile
+    user.profile.nickname = nickname;
+
+    return user;
+  });
+
+  function generateUniqueNickname(name) {
+    // Convert the name to a lowercase string with no spaces
+    const nickname = name.toLowerCase().replace(/\s+/g, '');
+    
+    // Check if the nickname already exists in the database
+    const existingUser = Meteor.users.findOne({ 'profile.nickname': nickname });
+    if (!existingUser) {
+      // If the nickname is unique, return it
+      return nickname;
+    } else {
+      // If the nickname is not unique, append a number to it and try again
+      let i = 1;
+      while (true) {
+        const newNickname = nickname + i;
+        const existingUser = Meteor.users.findOne({ 'profile.nickname': newNickname });
+        if (!existingUser) {
+          return newNickname;
+        }
+        i++;
+      }
+    }
+  }
+
+
 });
