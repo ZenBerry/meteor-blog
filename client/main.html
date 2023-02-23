@@ -12,9 +12,10 @@
   <div class='container'>
     <br>
     <div class='row'>
-      {{#if currentUser}}
+      {{#if nickname}}
         <h2 align='center'>{{nickname}} blog</h2>
-        
+      {{else}}
+        <h2 align='center'>Welcome to the quiet blog</h2>
       {{/if}}
       <div>
         <table align='left'>
