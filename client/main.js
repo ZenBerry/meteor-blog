@@ -3,9 +3,11 @@ import { Mongo } from 'meteor/mongo';
 import './routes.js';
 import { Router } from 'meteor/iron:router';
 
-Accounts.onLogin(() => Router.go('/@/' + Meteor.user().profile.nickname));
-
-
+Accounts.onLogin(function(info) {
+  if (info.type !=='resume'){
+    Router.go('/@/' + Meteor.user().profile.nickname)
+  }
+});
 
 posts = new Mongo.Collection('posts');
 Template.Insert.events({
@@ -44,7 +46,6 @@ Template.Insert.events({
 });
 Template.body.helpers({
   'resolutions': function() {
-    console.log(Meteor.userId());
     if (Template.instance().subscriptionsReady()) {
       return posts.find({
         nickname: Router.current().params.nickname
