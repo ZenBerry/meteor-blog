@@ -1,6 +1,12 @@
 import './main.html';
 import { Mongo } from 'meteor/mongo';
 import './routes.js';
+import { Router } from 'meteor/iron:router';
+
+Accounts.onLogin(() => Router.go('/@/' + Meteor.user().profile.nickname));
+
+
+
 posts = new Mongo.Collection('posts');
 Template.Insert.events({
   'click .post-button': function(event) {
