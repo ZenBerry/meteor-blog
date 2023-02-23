@@ -59,7 +59,7 @@ header {
   color: white;
 }
 
-footer {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,10 +71,10 @@ footer {
   bottom: 0;
   padding: 0px 20px 0px 20px;
 }
-footer post-button {
+.footer post-button {
   left: 300px;
 }
-footer p {
+.footer p {
   color: #E8D6BE;
   text-align: center;
 }

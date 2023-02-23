@@ -28,15 +28,19 @@
       </div>
     </div>
   </div>
-  <footer>
-    {{> Insert}} 
-  </footer>
+  <div class='footer'>
+    {{#if is_your_blog}}
+      {{> Insert}} 
+    {{/if}}
+  </div>
 </body>
 
 <template name='resolution' class='resolution'>
   <td>{{post}}&nbsp;
-    <a class='hover-button edit-post-button'>Edit</a>
-    <a class='hover-button delete-post-button'>Delete</a>
+    {{#if is_your_blog}}
+      <a class='hover-button edit-post-button'>Edit</a>
+      <a class='hover-button delete-post-button'>Delete</a>
+    {{/if}}
   </td> 
 </template>
 <template name='Insert'>

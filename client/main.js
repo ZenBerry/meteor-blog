@@ -2,13 +2,11 @@ import './main.html';
 import { Mongo } from 'meteor/mongo';
 import './routes.js';
 import { Router } from 'meteor/iron:router';
-
 Accounts.onLogin(function(info) {
-  if (info.type !=='resume'){
+  if (info && info.type !== 'resume') {
     Router.go('/@/' + Meteor.user().profile.nickname)
   }
 });
-
 posts = new Mongo.Collection('posts');
 Template.Insert.events({
   'click .post-button': function(event) {
@@ -57,8 +55,18 @@ Template.body.helpers({
   },
   'nickname': function() {
     return Router.current().params.nickname;
+  },
+  'is_your_blog': function() {
+    return Router.current().params.nickname === Meteor.user().profile.nickname
   }
 });
+
+Template.resolution.helpers({
+  'is_your_blog': function() {
+    return Router.current().params.nickname === Meteor.user().profile.nickname
+  }
+})
+
 Template.resolution.events({
   'click .delete-post-button': function() {
     const routerNick = Router.current().params.nickname
